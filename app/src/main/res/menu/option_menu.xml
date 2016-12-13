@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/ItemLogin"
+        android:title="Login"/>
+    <item android:id="@+id/ItemSignUp"
+        android:title="Sign Up" />
+    <item android:id="@+id/ItemLogOut"
+        android:title="Log Out" />
+    <item android:id="@+id/ItemAdd"
+        android:title="New"
+        android:icon="@drawable/ic_add_circle_outline_black_24dp"
+        app:showAsAction="ifRoom"/>
+</menu>
