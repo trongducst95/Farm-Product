@@ -111,4 +111,12 @@ public class SignUpActivity extends AppCompatActivity {
         add.setVisible(false);
         return super.onCreateOptionsMenu(menu);
     }
+
+     @Override
+    public boolean sua(Menu menu) {
+        getMenuInflater().inflate(R.menu.option_menu,menu);
+        MenuItem add = menu.findItem(R.id.ItemAdd);
+        add.setVisible(false);
+        return super.onCreateOptionsMenu(menu);
+    }
 }
