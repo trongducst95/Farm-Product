@@ -97,7 +97,7 @@ public class SignUpActivity extends AppCompatActivity {
             user.setIP(edtUser.getText().toString());
             user.setPassword(edtPass.getText().toString());
             db.addUsers(user);
-            Toast.makeText(this, "Sign Up complete!!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Sign Up abc complete!!!", Toast.LENGTH_SHORT).show();
             finish();
         }
     }
