@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.ngothanhtuan.controls.Adapter_Product;
 import com.ngothanhtuan.controls.Adapter_Type;
@@ -74,6 +75,22 @@ public class ListProductFragment extends Fragment {
             }
         });
 
+        lvProduct.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Products products1 = list.get(position);
+                DetailFragment detailFragment = new DetailFragment();
+                Bundle bundle1 = new Bundle();
+                bundle1.putParcelable("product",products1);
+                detailFragment.setArguments(bundle1);
+
+                FragmentManager manager1 = getFragmentManager();
+                FragmentTransaction transaction1 = manager1.beginTransaction();
+
+                transaction1.replace(R.id.FrgDetail, detailFragment);
+                transaction1.commit();
+            }
+        });
     }
 
     private void addControls(View view) {
@@ -88,28 +105,51 @@ public class ListProductFragment extends Fragment {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        menu.setHeaderTitle("Menu");
-        menu.add(0,0,0,"View");
-        menu.add(0,1,1,"Update");
-        menu.add(0,2,2,"Delete");
+        Configuration config = getResources().getConfiguration();
+        if (config.orientation == Configuration.ORIENTATION_PORTRAIT){
+            menu.setHeaderTitle("Menu");
+            menu.add(0,0,0,"View");
+            menu.add(0,1,1,"Update");
+            menu.add(0,2,2,"Delete");
+        }else {
+            menu.setHeaderTitle("Menu");
+            menu.add(0,1,1,"Update");
+            menu.add(0,2,2,"Delete");
+        }
     }
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
+        Configuration config = getResources().getConfiguration();
         switch (item.getItemId()){
-            case 0: break;
+            case 0:
+                Products products1 = list.get(pos);
+                DetailFragment detailFragment = new DetailFragment();
+                Bundle bundle1 = new Bundle();
+                bundle1.putParcelable("product",products1);
+                detailFragment.setArguments(bundle1);
+
+                FragmentManager manager1 = getFragmentManager();
+                FragmentTransaction transaction1 = manager1.beginTransaction();
+
+                transaction1.replace(R.id.FrgList, detailFragment);
+                transaction1.commit();
+                break;
             case 1:
                 Products products = list.get(pos);
                 AddPrFragment addPrFragment = new AddPrFragment();
                 Bundle bundle = new Bundle();
-                bundle.putParcelable("product",products);
+                bundle.putParcelable("product", products);
                 addPrFragment.setArguments(bundle);
 
-                addPrFragment.setArguments(bundle);
                 FragmentManager manager = getFragmentManager();
                 FragmentTransaction transaction = manager.beginTransaction();
-
-                transaction.replace(R.id.FrgList, addPrFragment);
+                if (config.orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    transaction.replace(R.id.FrgList, addPrFragment);
+                }
+                else {
+                    transaction.replace(R.id.FrgDetail, addPrFragment);
+                }
                 transaction.commit();
                 break;
             case 2:

@@ -3,10 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_list_product"
+    android:id="@+id/activity_maps"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ngothanhtuan.productfarmmanager.ProductActivity">
+    tools:context="com.ngothanhtuan.productfarmmanager.MapsActivity" >
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
@@ -19,25 +19,13 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:id="@+id/linearLayout"
             android:paddingTop="56dp">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:id="@+id/FrgList">
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/FrgDetail">
-
-            </FrameLayout>
+            <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         </LinearLayout>
 
@@ -60,3 +48,4 @@
     </android.support.v4.widget.DrawerLayout>
 
 </android.support.design.widget.CoordinatorLayout>
+

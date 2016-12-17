@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_main"
@@ -23,21 +24,23 @@
         android:id="@+id/edtPass"
         style="@style/style_EditText"
         android:inputType="textPassword"
-        android:hint="Password"
-        android:layout_marginBottom="20sp" />
+        android:hint="@string/pass"
+        android:layout_marginBottom="20sp"
+        tools:ignore="HardcodedText" />
 
     <Button
-        android:text="Login"
+        android:text="@string/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnLogin"
         android:layout_marginLeft="20sp"
         android:layout_marginRight="20sp"
-        android:background="@color/colorPrimary"
+        android:theme="@style/ButtonLogin"
         android:layout_marginBottom="10sp"
         android:textColor="@android:color/background_light"
         android:textStyle="bold"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        tools:ignore="HardcodedText" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -59,7 +62,7 @@
             android:textColor="@color/colorPrimary" />
 
         <TextView
-            android:text="@string/signup"
+            android:text="@string/sign_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtvSignUp"

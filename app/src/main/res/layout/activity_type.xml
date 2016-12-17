@@ -20,7 +20,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10sp"
-            android:paddingTop="56dp">
+            android:paddingTop="56dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -46,7 +48,7 @@
                     android:inputType="textPersonName"
                     android:ems="10"
                     android:id="@+id/edtNameT"
-                    android:hint="Name Type"
+                    android:hint="@string/NameT"
                     android:layout_marginBottom="5sp"
                     android:layout_marginTop="5sp" />
             </android.support.design.widget.TextInputLayout>
@@ -59,14 +61,14 @@
                 android:layout_marginRight="20sp">
 
                 <Button
-                    android:text="Save"
+                    android:text="@string/save"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/btnSave"
                     android:layout_weight="1" />
 
                 <Button
-                    android:text="Cancel"
+                    android:text="@string/cancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/btnCancel"

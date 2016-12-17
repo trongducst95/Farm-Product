@@ -13,23 +13,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.ngothanhtuan.productfarmmanager.MainActivity;
+import com.ngothanhtuan.productfarmmanager.MapsActivity;
 import com.ngothanhtuan.productfarmmanager.R;
 import com.ngothanhtuan.productfarmmanager.SignUpActivity;
-import com.ngothanhtuan.productfarmmanager.TypeActivity;
 
 /**
  * Created by MyPC on 11/9/2016.
  */
 
 public class CustomActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.option_menu,menu);
-        MenuItem add = menu.findItem(R.id.ItemAdd);
-        add.setVisible(false);
-        return super.onCreateOptionsMenu(menu);
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -63,12 +55,10 @@ public class CustomActivity extends AppCompatActivity implements NavigationView.
         int id = item.getItemId();
 
         if (id == R.id.nav_type) {
-            Intent intent = new Intent(this,TypeActivity.class);
-            startActivity(intent);
         } else if (id == R.id.nav_product) {
-
         } else if (id == R.id.nav_about) {
-
+            Intent intent = new Intent(this, MapsActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

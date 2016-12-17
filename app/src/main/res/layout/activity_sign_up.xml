@@ -75,12 +75,4 @@
             android:textSize="18sp" />
     </LinearLayout>
 
-    <TextView
-        android:text="@string/confir_mail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:layout_marginBottom="10sp" />
 </LinearLayout>

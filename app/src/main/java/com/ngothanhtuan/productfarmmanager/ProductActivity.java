@@ -5,7 +5,6 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -26,6 +25,7 @@ public class ProductActivity extends CustomActivity {
 
     AddPrFragment addPrFragment = new AddPrFragment();
     ListProductFragment listProductFragment = new ListProductFragment();
+    DetailFragment detailFragment = new DetailFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,6 @@ public class ProductActivity extends CustomActivity {
             hideFragment();
         }else {
             showFragment();
-            transaction.add(R.id.FrgDetail,addPrFragment);
         }
         transaction.commit();
     }
@@ -112,6 +111,11 @@ public class ProductActivity extends CustomActivity {
         } else if (id == R.id.nav_product) {
 
         } else if (id == R.id.nav_about) {
+            Intent intent = new Intent(this,MapsActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putInt("ID",ID);
+            intent.putExtras(bundle);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -123,9 +127,15 @@ public class ProductActivity extends CustomActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.ItemAdd:
+                Configuration config = getResources().getConfiguration();
                 FragmentManager manager = getFragmentManager();
                 FragmentTransaction transaction = manager.beginTransaction();
-                transaction.replace(R.id.FrgList,addPrFragment);
+                if (config.orientation == Configuration.ORIENTATION_PORTRAIT){
+                    transaction.replace(R.id.FrgList,addPrFragment);
+                }else {
+                    transaction.replace(R.id.FrgDetail,addPrFragment);
+                }
+
                 transaction.commit();
                 break;
 

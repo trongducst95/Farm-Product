@@ -4,6 +4,7 @@ package com.ngothanhtuan.productfarmmanager;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -33,6 +34,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Random;
 
+import fr.ganfra.materialspinner.MaterialSpinner;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -47,9 +50,8 @@ public class AddPrFragment extends Fragment {
     ArrayAdapter<Products_Type> arrayAdapter_Type;
 
     SQLite db;
-    int ID;
+    int ID,pos,default_spinner;
     String ID_pr;
-    int pos;
 
     final int RESQUEST_TAKE_PHOTO = 123;
     final int RESQUEST_CHOOSE_PHOTO = 321;
@@ -72,8 +74,11 @@ public class AddPrFragment extends Fragment {
 
     private void addEvents() {
         ID = getArguments().getInt("ID");
+
+        //khi update
         if (getArguments().getParcelable("product") != null){
             btnAddPr.setText("Save");
+
             Products products = getArguments().getParcelable("product");
             ID = products.getID_User();
             ID_pr = products.getID_Prodc();
@@ -82,16 +87,25 @@ public class AddPrFragment extends Fragment {
             edtName.setText(products.getName_Prodc());
             edtCount.setText(String.valueOf(products.getCount()));
             edtPrice.setText(products.getPrice().toString());
+
+            arrayList_Type = db.getAllType(ID);
+            arrayAdapter_Type = new ArrayAdapter<Products_Type>(getActivity(),android.R.layout.simple_spinner_item, arrayList_Type);
+
+            arrayAdapter_Type.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+            spType.setAdapter(arrayAdapter_Type);
+            for (int i =0;i<arrayList_Type.size();i++){
+                if (arrayList_Type.get(i).getID_Type().equals(products.getID_Type())){
+                    default_spinner = i+1;
+                    break;
+                }
+            }
         }
-
-
         arrayList_Type = db.getAllType(ID);
-        Products_Type a = new Products_Type("test","Chọn Type....");
-        arrayList_Type.add(0,a);
         arrayAdapter_Type = new ArrayAdapter<Products_Type>(getActivity(),android.R.layout.simple_spinner_item, arrayList_Type);
 
         arrayAdapter_Type.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spType.setAdapter(arrayAdapter_Type);
+        spType.setSelection(default_spinner);
 
         spType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -157,7 +171,7 @@ public class AddPrFragment extends Fragment {
     private void addControls(View view) {
         imgView = (ImageView) view.findViewById(R.id.imgView);
 
-        spType = (Spinner) view.findViewById(R.id.spType);
+        spType = (MaterialSpinner) view.findViewById(R.id.spType);
 
         edtName = (EditText) view.findViewById(R.id.edtName);
         edtCount = (EditText) view.findViewById(R.id.edtCount);
@@ -226,14 +240,23 @@ public class AddPrFragment extends Fragment {
 
     public void Cancel(){
         ListProductFragment listProductFragment = new ListProductFragment();
+        AddPrFragment addPrFragment = new AddPrFragment();
         Bundle bundle = new Bundle();
         bundle.putInt("ID",ID);
+        Configuration config = getResources().getConfiguration();
 
         listProductFragment.setArguments(bundle);
         FragmentManager manager = getFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
 
-        transaction.replace(R.id.FrgList, listProductFragment);
+        if (config.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            transaction.replace(R.id.FrgList, listProductFragment);
+        }
+        else {
+            transaction.replace(R.id.FrgList, listProductFragment);
+            transaction.remove(addPrFragment);
+        }
+
         transaction.commit();
     }
 

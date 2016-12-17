@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -73,7 +74,7 @@ public class TypeActivity extends CustomActivity {
                 Products_Type type = new Products_Type();
                 type.setID_Type(edtIDType.getText().toString());
                 type.setName_type(edtNameT.getText().toString());
-                if ("Save".equals(btnSave.getText()) == true){
+                if ("Save".equals(btnSave.getText()) == true || "Lưu".equals(btnSave.getText()) == true){
                     db.addType(type,ID);
                 }
 
@@ -157,6 +158,11 @@ public class TypeActivity extends CustomActivity {
             startActivity(intent);
 
         } else if (id == R.id.nav_about) {
+            Intent intent = new Intent(this,MapsActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putInt("ID",ID);
+            intent.putExtras(bundle);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -214,5 +220,13 @@ public class TypeActivity extends CustomActivity {
         });
 
         b.create().show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.option_menu,menu);
+        MenuItem add = menu.findItem(R.id.ItemAdd);
+        add.setVisible(false);
+        return super.onCreateOptionsMenu(menu);
     }
 }

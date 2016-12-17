@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Quản lý nông trại</string>
+    <string name="Chosse">Chọn........</string>
+    <string name="IDpr">ID Sản phẩm: </string>
+    <string name="NameT">Tên loại: </string>
+    <string name="Namepr">Tên SP: </string>
+    <string name="Paagain">Nhập lại</string>
+    <string name="action_settings">Cài đặt</string>
+    <string name="add">Thêm</string>
+    <string name="back"><![CDATA[<]]></string>
+    <string name="cancel">Hủy</string>
+    <string name="count">SL: </string>
+    <string name="don_t_have_an_account">Bạn không có account?</string>
+    <string name="email">email</string>
+    <string name="login">Đăng nhập</string>
+    <string name="pass">pass</string>
+    <string name="price">Giá: </string>
+    <string name="save">Lưu</string>
+    <string name="sign_up">Đăng kí</string>
+    <string name="take">Chụp hình</string>
+    <string name="type">Loại:</string>
+    <string name="username">Tên đăng nhập</string>
+    <string name="ID">ID</string>
+    <string name="type1">Loại</string>
+    <string name="product">Sản phẩm</string>
+    <string name="About">Thông tin</string>
+</resources>

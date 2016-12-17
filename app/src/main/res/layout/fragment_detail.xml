@@ -1,0 +1,169 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ngothanhtuan.productfarmmanager.DetailFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="5dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:srcCompat="@mipmap/ic_launcher"
+                android:id="@+id/imgD"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/ID"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:text="@string/IDpr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView4"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:text="ID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtvID"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/name"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:text="@string/Namepr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView5"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:text="Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtvName"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/type"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:text="@string/type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView6"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:text="type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtvType"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/count"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:text="@string/count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView7"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:text="count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtvCount"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/price"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:text="@string/price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView8"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:text="price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtvPrice"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

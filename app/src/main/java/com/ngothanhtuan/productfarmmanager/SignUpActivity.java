@@ -2,6 +2,8 @@ package com.ngothanhtuan.productfarmmanager;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -100,5 +102,13 @@ public class SignUpActivity extends AppCompatActivity {
             Toast.makeText(this, "Sign Up complete!!!", Toast.LENGTH_SHORT).show();
             finish();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.option_menu,menu);
+        MenuItem add = menu.findItem(R.id.ItemAdd);
+        add.setVisible(false);
+        return super.onCreateOptionsMenu(menu);
     }
 }

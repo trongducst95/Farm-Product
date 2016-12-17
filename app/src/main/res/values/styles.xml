@@ -40,5 +40,9 @@
         <item name="colorControlHighlight">@android:color/holo_red_light</item>
         <item name="colorButtonNormal">@android:color/holo_red_light</item>
     </style>
+    <style name="ButtonLogin" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+    </style>
 
 </resources>

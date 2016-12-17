@@ -90,4 +90,12 @@ public class MainActivity extends CustomActivity {
 
         db = new SQLite(this);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.option_menu,menu);
+        MenuItem add = menu.findItem(R.id.ItemAdd);
+        add.setVisible(false);
+        return super.onCreateOptionsMenu(menu);
+    }
 }

@@ -75,10 +75,10 @@ public class Adapter_Product extends BaseAdapter {
     private void addViews(int position) {
         Products product = list.get(position);
 
-        txtvID.setText("ID: " + product.getID_Prodc());
-        txtvName_P.setText("Name: " + product.getName_Prodc());
-        txtvType.setText("Type: " + db.getType(product.getID_Type()));
-        txtvPrice.setText("Price: " + product.getPrice().toString());
+        txtvID.setText(product.getID_Prodc());
+        txtvName_P.setText(product.getName_Prodc());
+        txtvType.setText(db.getType(product.getID_Type()));
+        txtvPrice.setText(product.getPrice().toString());
 
         Bitmap bmAvatar = BitmapFactory.decodeByteArray(product.getImg(),0,product.getImg().length);
         imgvAvatar.setImageBitmap(bmAvatar);

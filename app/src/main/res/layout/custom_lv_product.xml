@@ -15,31 +15,102 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:text="ID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtvID_P"
-            android:layout_marginBottom="5sp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:text="Type"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtvType"
-            android:layout_marginBottom="5sp" />
+            <TextView
+                android:text="@string/ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textview5"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp" />
 
-        <TextView
-            android:text="Product Name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtvName_P"
-            android:layout_marginBottom="5sp" />
+            <TextView
+                android:text="@string/ID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtvID_P"
+                android:layout_marginBottom="5sp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_weight="1" />
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtvPrice"
-            android:text="Price" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView9"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp" />
+
+            <TextView
+                android:text="@string/NameT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtvType"
+                android:layout_marginBottom="5sp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/Namepr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView10"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp" />
+
+            <TextView
+                android:text="@string/Namepr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtvName_P"
+                android:layout_marginBottom="5sp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView11"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtvPrice"
+                android:text="@string/price"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_weight="1" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </LinearLayout>
