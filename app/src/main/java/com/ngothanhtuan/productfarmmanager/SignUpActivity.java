@@ -64,7 +64,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private Boolean test_null() {
         if (edtUser.length() == 0){
-            Toast.makeText(SignUpActivity.this, "Username can't null!!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SignUpActivity.this, "Username khog dr tronmg!!!", Toast.LENGTH_SHORT).show();
             Animation shake = AnimationUtils.loadAnimation(SignUpActivity.this, R.anim.shake);
             edtUser.startAnimation(shake);
             return false;
